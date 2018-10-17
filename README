@@ -1,0 +1,14 @@
+Celem projektu jest napisanie aplikacji webowej w języku C#. 
+
+Aplikacja będzie uruchamiana na serwerze lokalnym (localhost). Jej zadaniem będzie obsługa laboratoriów w budynku. W tym celu aplikacja będzie komunikować się z relacyjną bazą danych zasiloną listą dostępnych pomieszczeń. Użytkownik chcąc wejść do pomieszczenia będzie rejestrowany w systemie po wcześniejszym sprawdzeniu czy do danego pomieszczenia ma dostęp. Możliwe będzie dodawanie użytkowników do systemu, usuwanie ich, a także nadawanie im  oraz usuwanie uprawnień do pomieszczeń. 
+Każde z pomieszczeń będzie miało określone godziny dostępu, a dostęp poza nimi będzie niemożliwy. 
+W momencie wciśnięcia odpowiedniego przycisku wyświetlona zostanie lista pomieszczeń z użytkownikami którzy aktualnie znajdują się wewnątrz.
+
+
+Realizowane funkcje:
+
+- Obsługa relacyjnej bazy danych:
+  * możliwość dodawania/usuwania użytkowników
+  * możliwość przypisywania/odbierania uprawnień do pomieszczeń
+  * możliwość sprawdzania statusu pomieszczeń (sprawdzanie, ile osób i kto jest w pomieszczeniu)
+  * sprawdzanie godzin dostępności pomieszczeń
