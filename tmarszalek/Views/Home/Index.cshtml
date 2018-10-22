@@ -1,8 +1,61 @@
-﻿<h2 style="text-align: center">@ViewData["Text"]</h2>
+﻿<link rel="stylesheet" href="../../../Content/bootstrap.css"/>
+<link rel="stylesheet" href="../../../Content/font-awesome.css"/>
 
-@*todo ogarnąć fontawesome*@
-<div id="box" style="align-content:center width: 80%; height: 200px; display:flex; flex-direction: row; margin-bottom: 50px;">
-    <div style="flex-grow: 1; text-align: center; width:200; height:200; border: 1px solid black"><h5>Pomieszczenia</h5><i class="fa fa-user"></i></div>
-    <div style="flex-grow: 1; text-align: center; width:200; height:200; border: 1px solid black"><h5>Użytkownicy</h5></div>
-    <div style="flex-grow: 1; text-align: center; width:200; height:200; border: 1px solid black"><h5>Uprawnienia</h5></div>
+<h2 style="text-align: center" class="display-4">@ViewData["Text"]</h2>
+
+<div id="box">
+    <div class="option" id="rooms"><h5>Pomieszczenia</h5><i class="fa fa-building"></i></div>
+    <div class="option" id="users"><h5>Użytkownicy</h5><i class="fa fa-user"></i></div>
+    <div class="option" id="permissionspage" runat="server"><h5>Uprawnienia</h5><i class="fa fa-key"></i></div>
 </div>
+
+<style>
+    body{
+        margin: auto;
+        padding: auto;
+    }
+    #box {
+        margin: auto;
+        align-content: center;
+        width: 80%;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 200px;
+        justify-content: space-between;
+    }
+    .option {
+        flex-grow: 1;
+        padding: 5px;
+        text-align: center;
+        width: 100px;
+        height: 150px;
+        border: 1px solid black;
+        cursor: pointer;
+    }
+    #rooms{
+        background-color: #FEFEFE;
+    }
+    #rooms:hover{
+        background-color: red;
+    }
+    #users {
+        background-color: #FEFEFE;
+    }
+    #users:hover {
+        background-color: blue;
+    }
+    #permissionspage {
+        background-color: #FEFEFE;
+    }
+        #permissionspage:hover {
+            background-color: green;
+    }
+    h5{
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .fa{
+        font-size: 75px;
+    }
+</style>

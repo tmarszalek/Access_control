@@ -18,5 +18,10 @@ namespace tmarszalek.Controllers
 
             return View();
         }
+        protected void permissionspage_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Users/Index.cshtml");
+            Server.Transfer("Users/Index.cshtml");
+        }
     }
 }
