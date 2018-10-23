@@ -10,6 +10,8 @@ namespace tmarszalek.Controllers
     {
         public ActionResult Index()
         {
+            ViewData["Text"] = "Uprawnienia";
+
             return View ();
         }
     }

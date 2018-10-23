@@ -1,10 +1,51 @@
-﻿<h2 style="text-align: center">Uprawnienia</h2>
+﻿<link rel="stylesheet" href="../../../Content/bootstrap.css" />
+<link rel="stylesheet" href="../../../Content/font-awesome.css" />
 
-@*Utworzyć forma, dwa selecty (user + pomieszczenie) + przycisk zapisujący*@
+<h2 style="text-align: center">@ViewData["Text"]</h2>
+
+<div id="box">
 
 <form>
-    <label>Użytkownik</label>
-    <select class="form-control"></select>
-    <label>Pomieszczenie</label>
-    <select></select>
+  <div class="form-group">
+    <label for="user">Użytkownik</label>
+      <select class="form-control" id="user">
+          <option selected>- - - - -</option>
+          <option>Jan Kowalski</option>
+          <option>Marcin Nowak</option>
+          <option>Tomasz Marszałek</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="room">Pomieszczenie</label>
+      <select class="form-control" id="room">
+          <option selected>- - - - -</option>
+          <option>1.01</option>
+          <option>2.08</option>
+          <option>340</option>
+      </select>
+  </div>
+  <button type="submit" class="btn btn-primary">Przypisz uprawnienie</button>
 </form>
+</div>
+
+
+<style>
+    body {
+        margin: auto;
+        padding: auto;
+    }
+
+    #box {
+        margin: auto;
+        align-content: center;
+        width: 80%;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 200px;
+        justify-content: space-between;
+    }
+    form{
+        margin: auto;
+    }
+</style>
