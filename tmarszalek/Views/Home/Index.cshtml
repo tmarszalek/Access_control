@@ -4,33 +4,36 @@
 <h2 style="text-align: center" class="display-4 mb-4">@ViewData["Text"]</h2>
 
 <div id="box">
+    <p>@ViewBag.Message</p>
     <div class="option" id="rooms"><h5>Pomieszczenia</h5><a href="/rooms"><i class="fa fa-building"></i></a></div>
     <div class="option" id="users"><h5>Użytkownicy</h5><a href="/users"><i class="fa fa-user"></i></a></div>
     <div class="option" id="permissionspage" runat="server"><h5>Uprawnienia</h5><a href="permissions"><i class="fa fa-key"></i></a></div>
     <div class="option" id="actions">
         <h5>Rejestr wejść/wyjść</h5>
-        <form>
+        <form method="post" action="@Url.Action("Register", "Home")">
             <div class="form-group">
                 <label for="user">Użytkownik</label>
-                <select class="form-control" id="user">
+                <select class="form-control" name="user_id" id="user">
                     <option selected>- - - - -</option>
-                    <option>Jan Kowalski</option>
-                    <option>Marcin Nowak</option>
-                    <option>Tomasz Marszałek</option>
+                    @foreach (var user in Model.Users)
+                    {
+                        <option value="@user.ID">@user.Name @user.Surname (@user.Number)</option>
+                    }
                 </select>
             </div>
             <div class="form-group">
                 <label for="room">Pomieszczenie</label>
-                <select class="form-control" id="room">
+                <select class="form-control" id="room" name="room_id">
                     <option selected>- - - - -</option>
-                    <option>1.01</option>
-                    <option>2.08</option>
-                    <option>340</option>
+                    @foreach (var room in Model.Rooms)
+                    {
+                        <option value="@room.ID">@room.Name</option>
+                    }
                 </select>
             </div>
             <div class="form-group">
-                <label><input type="radio" name="optradio"> Wejście</label></br>
-                <label><input type="radio" name="optradio"> Wyjście</label>
+                <label><input type="radio" name="action" value="1"> Wejście</label></br>
+                <label><input type="radio" name="action" value="0"> Wyjście</label>
             </div>
             <button type="submit" class="btn btn-primary">Wykonaj</button>
         </form>
@@ -94,4 +97,7 @@
     .fa{
         font-size: 75px;
     }
+    select{
+        margin: auto;
+        width: 50% !important;
 </style>

@@ -4,25 +4,33 @@
 <h2 style="text-align: center">@ViewData["Text"]</h2>
 
 <div id="box">
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success">
+            <strong>Sukces!</strong> @ViewBag.Message
+        </div>
+    }
 
-<form>
+<form method="post" action="@Url.Action("Create", "Permissions")">
   <div class="form-group">
     <label for="user">Użytkownik</label>
       <select class="form-control" id="user">
           <option selected>- - - - -</option>
-          <option>Jan Kowalski</option>
-          <option>Marcin Nowak</option>
-          <option>Tomasz Marszałek</option>
+          @foreach (var user in Model.Users)
+          {
+              <option value="@user.ID">@user.Name @user.Surname (@user.Number)</option>
+          }
     </select>
   </div>
   <div class="form-group">
     <label for="room">Pomieszczenie</label>
-      <select class="form-control" id="room">
-          <option selected>- - - - -</option>
-          <option>1.01</option>
-          <option>2.08</option>
-          <option>340</option>
-      </select>
+    <select class="form-control" id="room">
+        <option selected>- - - - -</option>
+        @foreach (var room in Model.Rooms)
+        {
+            <option value="@room.ID">@room.Name</option>
+        }
+    </select>
   </div>
   <button type="submit" class="btn btn-primary">Przypisz uprawnienie</button>
 </form>

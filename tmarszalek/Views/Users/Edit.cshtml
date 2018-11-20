@@ -1,0 +1,47 @@
+﻿<link rel="stylesheet" href="../../../Content/bootstrap.css" />
+<link rel="stylesheet" href="../../../Content/font-awesome.css" />
+
+<h2 style="text-align: center">@ViewData["Text"]</h2>
+
+@foreach (var user in Model)
+{
+<div id="box">
+    <form method="post" action="@Url.Action("Edit", "Users", new { @user.ID })">
+        <div class="form-group">
+            <label for="user">Imię</label>
+            <input class="form-control" name="user_name" id="name" value="@user.Name" />
+        </div>
+        <div class="form-group">
+            <label for="surname">Nazwisko</label>
+            <input class="form-control" name="user_surname" id="surname" value="@user.Surname" />
+        </div>
+        <div class="form-group">
+            <label for="number">Numer</label>
+            <input class="form-control" name="user_number" id="number" value="@user.Number" />
+        </div>
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+    </form>
+</div>
+}
+
+<style>
+    body {
+        margin: auto;
+        padding: auto;
+    }
+
+    #box {
+        margin: auto;
+        align-content: center;
+        width: 80%;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 200px;
+        justify-content: space-between;
+    }
+
+    form {
+        margin: auto;
+    }
+</style>
